@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PIFE 2026 - Notion Widget</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: transparent; /* Ideal para Notion */
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+            color: #37352f;
+        }
+        .notion-card {
+            background: #ffffff;
+            border: 1px solid #e9e9e7;
+            border-radius: 8px;
+            transition: background 0.2s ease;
+        }
+        .notion-card:hover {
+            background: #f7f7f5;
+        }
+        .progress-bar {
+            height: 8px;
+            border-radius: 4px;
+            background: #edece9;
+            overflow: hidden;
+        }
+        .progress-fill {
+            height: 100%;
+            transition: width 0.5s ease;
+        }
+        .p-color { background-color: #525ddc; }
+        .i-color { background-color: #0077b6; }
+        .f-color { background-color: #00a36c; }
+        .e-color { background-color: #e91e63; }
+        
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 4px 0;
+            cursor: pointer;
+        }
+        .checkbox-item input {
+            cursor: pointer;
+            accent-color: #37352f;
+        }
+    </style>
+</head>
+<body class="p-2 md:p-6">
+
+    <!-- Header Estilo Notion -->
+    <div class="max-w-4xl mx-auto mb-8">
+        <div class="flex items-center gap-4 mb-2">
+            <span class="text-5xl">🎯</span>
+            <div>
+                <h1 class="text-3xl font-bold">Plano PIFE 2026</h1>
+                <p class="text-slate-500 text-sm">Consolidado: Profissional, Intelectual, Físico, Emocional</p>
+            </div>
+        </div>
+        <hr class="mt-4 border-slate-200">
+    </div>
+
+    <!-- Metas Principais -->
+    <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+        
+        <!-- P - Profissional -->
+        <div class="notion-card p-5">
+            <div class="flex items-center gap-2 mb-3">
+                <span class="p-2 bg-indigo-100 rounded text-indigo-700 text-xs">💼 P</span>
+                <h3 class="font-bold">Profissional</h3>
+            </div>
+            <div class="space-y-4">
+                <div>
+                    <div class="flex justify-between text-xs mb-1">
+                        <span class="text-slate-500">Renda Extra (Meta: R$ 5k)</span>
+                        <span class="font-bold">0%</span>
+                    </div>
+                    <div class="progress-bar"><div class="progress-fill p-color" style="width: 5%"></div></div>
+                </div>
+                <div class="text-sm space-y-1">
+                    <label class="checkbox-item"><input type="checkbox"> <span>Projetos High-Ticket</span></label>
+                    <label class="checkbox-item"><input type="checkbox"> <span>Sábados: Deep Work (4h)</span></label>
+                </div>
+            </div>
+        </div>
+
+        <!-- I - Intelectual -->
+        <div class="notion-card p-5">
+            <div class="flex items-center gap-2 mb-3">
+                <span class="p-2 bg-sky-100 rounded text-sky-700 text-xs">🧠 I</span>
+                <h3 class="font-bold">Intelectual</h3>
+            </div>
+            <div class="space-y-3 text-sm">
+                <div class="flex flex-wrap gap-2 mb-2">
+                    <span class="px-2 py-0.5 bg-slate-100 rounded text-[10px] font-bold">META 401</span>
+                    <span class="px-2 py-0.5 bg-slate-100 rounded text-[10px] font-bold">GOOGLE</span>
+                </div>
+                <label class="checkbox-item"><input type="checkbox"> <span>Mandarim (15 min/dia)</span></label>
+                <label class="checkbox-item"><input type="checkbox"> <span>Inglês/Esp: Consumo Técnico</span></label>
+            </div>
+        </div>
+
+        <!-- F - Físico -->
+        <div class="notion-card p-5">
+            <div class="flex items-center gap-2 mb-3">
+                <span class="p-2 bg-emerald-100 rounded text-emerald-700 text-xs">🏃 F</span>
+                <h3 class="font-bold">Físico</h3>
+            </div>
+            <div class="space-y-4">
+                <div>
+                    <div class="flex justify-between text-xs mb-1">
+                        <span class="text-slate-500">Peso: 145kg → 125kg</span>
+                        <span class="font-bold text-emerald-600">Alvo: -20kg</span>
+                    </div>
+                    <div class="progress-bar"><div class="progress-fill f-color" style="width: 10%"></div></div>
+                </div>
+                <label class="checkbox-item text-sm"><input type="checkbox"> <span>Treino 06:00 (Seg-Sex)</span></label>
+            </div>
+        </div>
+
+        <!-- E - Emocional -->
+        <div class="notion-card p-5">
+            <div class="flex items-center gap-2 mb-3">
+                <span class="p-2 bg-rose-100 rounded text-rose-700 text-xs">🧘 E</span>
+                <h3 class="font-bold">Emocional</h3>
+            </div>
+            <div class="space-y-2 text-sm">
+                <label class="checkbox-item"><input type="checkbox"> <span>Dormir às 22:00</span></label>
+                <label class="checkbox-item"><input type="checkbox"> <span>Domingo: Detox Digital</span></label>
+                <label class="checkbox-item"><input type="checkbox"> <span>Hobby fora do ecrã</span></label>
+            </div>
+        </div>
+    </div>
+
+    <!-- Agenda de Blocos -->
+    <div class="max-w-4xl mx-auto bg-[#f1f1ef] p-6 rounded-lg">
+        <h3 class="font-bold text-sm mb-4 uppercase tracking-widest text-slate-500">Cronograma Diário</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <div class="bg-white p-3 rounded shadow-sm">
+                <p class="text-[10px] font-bold text-emerald-600">MANHÃ (06h)</p>
+                <p class="text-sm font-bold">Físico</p>
+                <p class="text-[11px] text-slate-500">Treino + Cardio + Água</p>
+            </div>
+            <div class="bg-white p-3 rounded shadow-sm border-l-4 border-indigo-400">
+                <p class="text-[10px] font-bold text-indigo-600">TARDE (08h-18h)</p>
+                <p class="text-sm font-bold">Profissional</p>
+                <p class="text-[11px] text-slate-500">Foco em Performance</p>
+            </div>
+            <div class="bg-white p-3 rounded shadow-sm border-l-4 border-sky-400">
+                <p class="text-[10px] font-bold text-sky-600">NOITE (18h+)</p>
+                <p class="text-sm font-bold">Intelectual</p>
+                <p class="text-[11px] text-slate-500">Idiomas + Certificações</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="max-w-4xl mx-auto mt-6 text-center">
+        <p class="text-xs text-slate-400">"O sucesso é a soma de pequenos esforços repetidos dia após dia."</p>
+    </div>
+
+</body>
+</html>
+
